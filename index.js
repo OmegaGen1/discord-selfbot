@@ -61,3 +61,5 @@ bot.on('message', async(msg)=>{
         console.log(red(`[CMD INFOMATION] :: YOU MUST RESTART THE BOT IN ORDER TO STOP THE SPAM`));
     }
 });
+
+bot.login(settings.token);
