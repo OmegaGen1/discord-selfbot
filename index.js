@@ -47,7 +47,7 @@ bot.on('message', async(msg)=>{
     }
     if(cmd === 'embed'){
         let eContent = args.slice(0).join(" ");
-        msg.edit("", { embed: new RichEmbed().setColor(settings.color).setDescription(eContent).setFooter('Self Bot By: Jinx#4321')});
+        msg.edit("", { embed: new RichEmbed().setColor(`${settings.color}`).setDescription(eContent).setFooter('Self Bot By: Jinx#4321')});
     }
     if(cmd === 'restart'){
         process.exit();
