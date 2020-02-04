@@ -1,0 +1,23 @@
+{
+  "name": "discord-selfbot",
+  "version": "1.0.0",
+  "description": "Discord.js selfbot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JinxHvH/discord-selfbot.git"
+  },
+  "author": "Jinx#4321",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JinxHvH/discord-selfbot/issues"
+  },
+  "homepage": "https://github.com/JinxHvH/discord-selfbot#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "discord.js": "^11.5.1"
+  }
+}
