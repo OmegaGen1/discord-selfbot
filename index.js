@@ -21,6 +21,7 @@ console.log(cyan(`[COMMAND LIST] :: ${settings.prefix}purge [100]:: Deletes 100 
 console.log(cyan(`[COMMAND LIST] :: ${settings.prefix}embed [content] :: Send a message in a embed.`));
 console.log(cyan(`[COMMAND LIST] :: ${settings.prefix}restart :: Restarts the bot`));
 console.log(cyan(`[COMMAND LIST] :: ${settings.prefix}spam [ID] [content] :: Spam a users DM`));
+console.log(cyan(`[COMMAND LIST] :: ${settings.prefix}eval [content] :: Evaluate code`));
 
 bot.on('ready', ()=>{
     console.log(green(`[SELF BOT] :: ${bot.user.tag} is online and ready`));
@@ -59,6 +60,15 @@ bot.on('message', async(msg)=>{
             bot.users.get(user).send(mContent);
         }, 1500);
         console.log(red(`[CMD INFOMATION] :: YOU MUST RESTART THE BOT IN ORDER TO STOP THE SPAM`));
+    }
+    if(cmd === 'eval'){
+        let res;
+        try{
+            res = eval(args.join(" "))
+        } catch(e){
+            return msg.edit("", { embed: new RichEmbed().setTitle("Results").setColor("#FF0000").setDescription(":desktop: **Input**: ```" + args.join("") + "```:eyes: **Error**: ```" + err + "```").setFooter("Eval") })
+        }
+        msg.edit("", { embed: new RichEmbed().setTitle("Results").setColor("#46FF00").setDescription(":desktop: **Input**: ```" + args.join("") + "```:white_check_mark: **Output**: ```" + res + "```").setFooter("Eval") })
     }
 });
 
